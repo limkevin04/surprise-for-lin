@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>给我的璇公主</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'ZCOOL XiaoWei', sans-serif;
+      background: linear-gradient(120deg, #222831, #393E46);
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 3em;
+      color: #FFD369;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 211, 105, 0.3);
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 10s infinite;
+      top: -20px;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        top: -20px;
+        left: calc(100vw * var(--x));
+        opacity: 1;
+      }
+      100% {
+        top: 100vh;
+        left: calc(100vw * var(--x) + 50px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>早啊我的璇公主 💛</h1>
+  <audio controls autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/08/audio_10b7c09b3f.mp3?filename=girls-like-you-instrumental-16008.mp3" type="audio/mpeg">
+    你的浏览器不支持音频播放
+  </audio>
+
+  <div class="container">
+    <p>
+      璇biibii 我真的很喜欢你。虽然你可能把我印象定在那时候我不找你你不找我时期，让你心里对我扣分了。但是我很确定地跟你说：当我们确定在一起的时候，我是真的相信我们可以走到未来。<br/><br/>
+      我想和你过那种每个异地情侣都憧憬的生活。虽然我是个直男，不会哄人开心，也不太懂你什么时候开心、伤心、emo，但我会努力学。虽然我们没视频过也还没现实见过，但我很清楚我们一定会在现实中继续恋爱。<br/><br/>
+      我会听你话，照顾身体，少抽烟。同时我也希望你能好好吃饭，照顾自己，别让我来找你时看到你低血糖虚虚的样子～<br/><br/>
+      你来新山时我会天天喂你三餐，要知道你的男朋友可是大厨！到时候我做个菜单你来点单～<br/><br/>
+      bii，如果我做了什么你不喜欢，请直接跟我说，不然你生气不理我、用表情包代替我会很难过的。我这个人可能傻逼点哈哈，就是喜欢直接的沟通，我会改。<br/><br/>
+      好啦，我的宇璇公主，我希望我们能一直在一起。不管是开心的、吵闹的、抽象的日子，我都想和你一起过。<br/><br/>
+      恭喜我们在一起第六天噜～ 晚安宝，我也要去睡啦，编程真的累死了，但我的心都给你了 💖
+    </p>
+  </div>
+
+  <script>
+    // 浪漫的爱心飘落动画
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.setProperty('--x', Math.random());
+      heart.style.left = Math.random() * 100 + 'vw';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
